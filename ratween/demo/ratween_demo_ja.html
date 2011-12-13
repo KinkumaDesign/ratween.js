@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 	<meta charset="utf-8" />
-	<title>ratween demo page</title>
+	<title>ratween デモページ</title>
 	<script src="jquery-1.6.2.min.js"></script>
 	<script src="ratween.js"></script>
 
@@ -49,6 +49,7 @@ body{
 	top:0px;
 	left:0px;
 	text-align:center;
+	font-size:10px;
 }
 
 h1{
@@ -87,46 +88,48 @@ pre{
 #lang_menu{
 	float:right;
 }
+
 </style>
 </head>
 <body>
 <div id="wrapper">
 
 <div class="clearfix">
-<p id="lang_menu" class="mb15"><a href="ratween_demo_ja.html">日本語</a></p>
+<p id="lang_menu" class="mb15"><a href="ratween_demo.html">English</a></p>
 </div>
 
+
 <h1>ratween CSS3 Transition jQuery plugin</h1>
-<p class="mb15">This plugin makes elements CSS3 Transition.<br />
-MIT licence.<br />
+<p class="mb15">要素にCSS3トランジションを適用します。<br />
+MIT ライセンスです。<br />
 current ver 0.2<br />
-This plugin's author is <a href="http://en.kuma-de.com/blog/" target="_blank">KinkumaDesign</a><br/>
+作者は<a href="http://www.kuma-de.com/" target="_blank">KinkumaDesign</a>です。<br/>
 <br />
-<a href="https://github.com/KinkumaDesign/ratween.js" target="_blank">>>Download it from github.</a>
+<a href="https://github.com/KinkumaDesign/ratween.js" target="_blank">>>githubからダウンロードする</a>
 </p>
 
-<h3>Preparation</h3>
+<h3>準備</h3>
 
-<p class="mb15">You must import jQuery and ratween. Then let's start.</p>
+<p class="mb15">jQuery と ratweenをインポートします。始めましょう！</p>
 
 <pre>
 	&lt;script src="jquery-1.6.2.min.js"&gt;&lt;/script&gt;
 	&lt;script src="ratween.js"&gt;&lt;/script&gt;
 </pre>
 
-<h3>Basics</h3>
+<h3>基本</h3>
 
 <p class="mb15">
-You can set css property.
+CSSプロパティをセットできます。
 </p>
 
 <!--basic1-->
-<p class="mb5">ex1</p>
+<p class="mb5">サンプル１</p>
 <pre>
 $('#basic1').ratween({left:'300px'});
 </pre>
 <div class="playground">
-	<div id="basic1" class="square">click</div>
+	<div id="basic1" class="square">クリック</div>
 </div>
 <script>
 $('#basic1').click(function(){
@@ -135,12 +138,12 @@ $('#basic1').click(function(){
 </script>
 
 <!--basic2-->
-<p class="mb5">ex2</p>
+<p class="mb5">サンプル２</p>
 <pre>
 $('#basic2').ratween({width:'300px'});
 </pre>
 <div class="playground">
-	<div id="basic2" class="square">click</div>
+	<div id="basic2" class="square">クリック</div>
 </div>
 <script>
 $('#basic2').click(function(){
@@ -149,16 +152,16 @@ $('#basic2').click(function(){
 </script>
 
 <p class="mb15">
-You can set multiple css properties.
+複数のCSSプロパティをセットできます。
 </p>
 
 <!--basic3-->
-<p class="mb5">ex3</p>
+<p class="mb5">サンプル３</p>
 <pre>
 $('#basic3').ratween({opacity:0.5,width:'100px',left:'400px'});
 </pre>
 <div class="playground">
-	<div id="basic3" class="square">click</div>
+	<div id="basic3" class="square">クリック</div>
 </div>
 <script>
 $('#basic3').click(function(){
@@ -171,19 +174,19 @@ $('#basic3').click(function(){
 
 
 
-<h3>Options</h3>
+<h3>オプション</h3>
 
 <p class="mb15">
-You can set options. Such as time, easing, delay, and callback.
+オプションをセットできます。アニメーションの時間、イージング、遅延時間、関数呼び出しです。
 </p>
 
 <!--options1-->
-<p class="mb5"><strong>Time</strong>)  Defalut is 1.0 second.</p>
+<p class="mb5"><strong>時間</strong>) 初期設定は 1.0秒です。</p>
 <pre>
 $('#options1').ratween({left:'400px'},{time:0.5});
 </pre>
 <div class="playground">
-	<div id="options1" class="square">click</div>
+	<div id="options1" class="square">クリック</div>
 </div>
 <script>
 $('#options1').click(function(){
@@ -194,12 +197,12 @@ $('#options1').click(function(){
 
 
 <!--options2-->
-<p class="mb5"><strong>Delay</strong>)  Defalut is 0.0 second.</p>
+<p class="mb5"><strong>遅延時間</strong>)  初期設定は 0.0秒です。</p>
 <pre>
 $('#options2').ratween({left:'400px'},{delay:2.0});
 </pre>
 <div class="playground">
-	<div id="options2" class="square">click</div>
+	<div id="options2" class="square">クリック</div>
 </div>
 <script>
 $('#options2').click(function(){
@@ -209,8 +212,8 @@ $('#options2').click(function(){
 
 
 <!--options3-->
-<p class="mb15"><strong>Easing</strong>)  Defalut is lenear.<br />
-There are some easings. Availables are…<br />
+<p class="mb15"><strong>イージング</strong>) 初期設定はlenearです。<br />
+下のように、いくつかのイージングがあります。<br />
 <br />
 lenear,
 easeInSine, easeOutSine, easeInOutSine,
@@ -220,19 +223,19 @@ easeInQuart, easeOutQuart, easeInOutQuart,<br />
 easeInQuint, easeOutQuint, easeInOutQuint,
 easeInExpo, easeOutExpo, easeInOutExpo<br />
 <br />
-You can set this property with uppercase or lowercase.<br />
-easeinsine, EASEINSINE, easeInsine are also OK.<br/>
+大文字、小文字をどちらでも使って書くことが可能です。<br />
+easeinsine, EASEINSINE, easeInsine などと買いても大丈夫です。<br/>
 <br />
 
-<span style="color:#f00"><b>Caution!</b></span> I made this easings with imaginating<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweener.easing</a>. But actually this plugin's easings and Tweener's those are not equal.<br />
-Because I used cubic curve-bezier. (see <a href="http://cssglue.com/cubic" target="_blank">this site</a>)<br />
-So if you change easing curve, try to change the curve value in source code.
+<span style="color:#f00"><b>注意</b></span> このイージングを作るときに、<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweenerのイージング</a>をイメージしていました。 ですが、実際にはこのプラグインのイージングとTweenerのそれとは全く同じものではありません。<br />
+なぜなら、ベジェカーブを使って書いているためです。(<a href="http://cssglue.com/cubic" target="_blank">このサイト</a>を見てみてください。)これを使って、なんとなくTweenerっぽいカーブの値をとっています。<br />
+だから、もしイージングのカーブを変更したい場合は、ソースコードのカーブの値を書き換えてください。
 </p>
 <pre>
 $('#options3').ratween({left:'400px'},{easing:'easeInQuint'});
 </pre>
 <div class="playground">
-	<div id="options3" class="square">click</div>
+	<div id="options3" class="square">クリック</div>
 </div>
 <script>
 $('#options3').click(function(){
@@ -244,12 +247,12 @@ $('#options3').click(function(){
 
 
 <!--options4-->
-<p class="mb5"><strong>Callback</strong>)  Defalut is none.</p>
+<p class="mb5"><strong>終了時関数呼び出し</strong>)  初期設定なし。</p>
 <pre>
 $('#options4').ratween({left:'400px'},{callback:function(){ alert('Hello ratween'); });
 </pre>
 <div class="playground">
-	<div id="options4" class="square">click</div>
+	<div id="options4" class="square">クリック</div>
 </div>
 <script>
 $('#options4').click(function(){
@@ -259,7 +262,7 @@ $('#options4').click(function(){
 
 
 <!--options5-->
-<p class="mb5">You can set these options together.</p>
+<p class="mb5">オプションを同時に使うことが可能です。</p>
 <pre>
 	$('#options5').ratween({left:'400px',opacity:0},{
 		time:0.5,
@@ -271,7 +274,7 @@ $('#options4').click(function(){
 	});
 </pre>
 <div class="playground">
-	<div id="options5" class="square">click</div>
+	<div id="options5" class="square">クリック</div>
 </div>
 <script>
 $('#options5').click(function(){
@@ -289,16 +292,16 @@ $('#options5').click(function(){
 
 
 
-<h3>Multiple targets</h3>
+<h3>複数のターゲット指定</h3>
 
-<p class="mb15">You can set multiple targets</p>
+<p class="mb15">複数のターゲットを指定することが可能です。</p>
 <pre>
 $('#multiple_targets div').ratween({left:'400px', opacity:0}, {time:0.5, easing:'easeinoutcubic'});
 </pre>
 <div class="playground" id="multiple_targets">
-	<div style="" class="square">click</div>
-	<div style="left:50px;" class="square">click</div>
-	<div style="left:100px;"class="square">click</div>
+	<div style="" class="square">クリック</div>
+	<div style="left:50px;" class="square">クリック</div>
+	<div style="left:100px;"class="square">クリック</div>
 </div>
 <script>
 $('#multiple_targets div').click(function(){
@@ -307,19 +310,19 @@ $('#multiple_targets div').click(function(){
 </script>
 
 
-<h3>Pause, Stop</h3>
+<h3>一時停止、終了</h3>
 
-<p class="mb15">You can pause transition.</p>
+<p class="mb15">アニメーションの一時停止が可能です。</p>
 <pre>
 $('#pauseBtn').click(function(){
 	$('#pauseTarget').ratween('pause');
 });
 </pre>
 
-<p class="mb5">First click yellow, and then click blue.</p>
+<p class="mb5">黄色の後に、青色を押してください。</p>
 <div class="playground">
-	<div style="" class="square" id="pauseTarget">click</div>
-	<div style="background-color:#0FF" class="square" id="pauseBtn">pause</div>
+	<div style="" class="square" id="pauseTarget">クリック</div>
+	<div style="background-color:#0FF" class="square" id="pauseBtn">一時停止</div>
 </div>
 <script>
 $('#pauseBtn').click(function(){
@@ -331,7 +334,7 @@ $('#pauseTarget').click(function(){
 </script>
 
 
-<p class="mb15">You can stop transition. Stop method is equal with forward.</p>
+<p class="mb15">終了することが可能です。終了は、早送りと同じです。</p>
 
 
 <pre>
@@ -340,10 +343,10 @@ $('#stopBtn').click(function(){
 });
 </pre>
 
-<p class="mb5">First click yellow, and then click blue.</p>
+<p class="mb5">黄色の後に、青色を押してください。</p>
 <div class="playground">
-	<div style="" class="square" id="stopTarget">click</div>
-	<div style="background-color:#0FF" class="square" id="stopBtn">stop</div>
+	<div style="" class="square" id="stopTarget">クリック</div>
+	<div style="background-color:#0FF" class="square" id="stopBtn">終了</div>
 </div>
 <script>
 $('#stopBtn').click(function(){
