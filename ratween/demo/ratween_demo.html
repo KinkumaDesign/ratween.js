@@ -2,26 +2,9 @@
 <html lang="en">
 	<head>
 	<meta charset="utf-8" />
-	<title>mielogger demo page</title>
+	<title>ratween demo page</title>
 	<script src="jquery-1.6.2.min.js"></script>
 	<script src="ratween.js"></script>
-<script>
-
-
-$(function(){
-		$('#main').ratween({
-			top:'100px', left:'300px', opacity:0.5
-			}, {
-				time:0.5, delay:0, easing:'ease-in-out',
-				callback:function(){
-					$().mlog('finish!!');
-				}
-			}
-		);
-});
-
-
-</script>
 
 <style>
 
@@ -38,26 +21,332 @@ $(function(){
     zoom:1;
 }
 
+h1,h2,h3,p,pre{
+	margin:0;
+	padding:0;
+	font-weight:normal;
+}
+
 body{
 	padding:0px;
 	margin:0px;
-	color:#666;
+	color:#333;
 	font-family: sans-serif;
-	font-size:16px;
-	background: #A4B5BF;
+	font-size:12px;
+	background: #aaa;
 }
-#main{
-	width:100px;
-	height:100px;
+#wrapper{
+	background:#fff;
+	width:800px;
+	margin:0 auto;
+	padding:30px;
+}
+.square{
+	width:50px;
+	height:50px;
 	background:#ff0;
-	position:absolute;
-	top:'50px',
-	left:'50px'
+	position:relative;
+	top:0px;
+	left:0px;
+	text-align:center;
+}
+
+h1{
+	margin-bottom:30px;
+	font-family:serif;
+	font-size:30px;
+}
+h3{
+	padding-bottom:3px;
+	border-bottom:1px solid #aaa;
+	font-size:18px;
+	margin-bottom:15px;
+	font-family:serif;
+}
+p{
+	line-height:150%;
+}
+p.mb5{
+	margin-bottom:5px;
+}
+p.mb15{
+	margin-bottom:15px;
+}
+
+pre{
+	padding:3px;
+	background:#eee;
+	margin-bottom:15px;
+}
+
+.playground{
+	position:relative;
+	margin-bottom:30px;
 }
 </style>
 </head>
 <body>
-	<div id="main"></div>
+<div id="wrapper">
+<h1>ratween jQuery plugin</h1>
+<p class="mb15">This plugin makes elements CSS3 Transition.<br />
+MIT licence.<br />
+current ver 0.2</p>
+
+<h3>Preparation</h3>
+
+<p class="mb15">You must import jQuery and ratween. Then let's start.</p>
+
+<pre>
+	&lt;script src="jquery-1.6.2.min.js"&gt;&lt;/script&gt;
+	&lt;script src="ratween.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3>Basics</h3>
+
+<p class="mb15">
+You can set css property.
+</p>
+
+<!--basic1-->
+<p class="mb5">ex1</p>
+<pre>
+$('#basic1').ratween({left:'300px'});
+</pre>
+<div class="playground">
+	<div id="basic1" class="square">click</div>
+</div>
+<script>
+$('#basic1').click(function(){
+	$('#basic1').ratween({left:'300px'});
+});
+</script>
+
+<!--basic2-->
+<p class="mb5">ex2</p>
+<pre>
+$('#basic2').ratween({width:'300px'});
+</pre>
+<div class="playground">
+	<div id="basic2" class="square">click</div>
+</div>
+<script>
+$('#basic2').click(function(){
+	$('#basic2').ratween({width:'300px'});
+});
+</script>
+
+<p class="mb15">
+You can set multiple css properties.
+</p>
+
+<!--basic3-->
+<p class="mb5">ex3</p>
+<pre>
+$('#basic3').ratween({opacity:0.5,width:'100px',left:'400px'});
+</pre>
+<div class="playground">
+	<div id="basic3" class="square">click</div>
+</div>
+<script>
+$('#basic3').click(function(){
+	$('#basic3').ratween({opacity:0.5,width:'400px',left:'400px'});
+});
+</script>
+
+
+
+
+
+
+<h3>Options</h3>
+
+<p class="mb15">
+You can set options. Such as time, easing, delay, and callback.
+</p>
+
+<!--options1-->
+<p class="mb5"><strong>Time</strong>)  Defalut is 1.0 second.</p>
+<pre>
+$('#options1').ratween({left:'400px'},{time:0.5});
+</pre>
+<div class="playground">
+	<div id="options1" class="square">click</div>
+</div>
+<script>
+$('#options1').click(function(){
+	$('#options1').ratween({left:'400px'},{time:0.2});
+});
+</script>
+
+
+
+<!--options2-->
+<p class="mb5"><strong>Delay</strong>)  Defalut is 0.0 second.</p>
+<pre>
+$('#options2').ratween({left:'400px'},{delay:2.0});
+</pre>
+<div class="playground">
+	<div id="options2" class="square">click</div>
+</div>
+<script>
+$('#options2').click(function(){
+	$('#options2').ratween({left:'400px'},{delay:2.0});
+});
+</script>
+
+
+<!--options3-->
+<p class="mb15"><strong>Easing</strong>)  Defalut is lenear.<br />
+There are some easings. Availables are…<br />
+<br />
+lenear,
+easeInSine, easeOutSine, easeInOutSine,
+easeInQuad, easeOutQuad, easeInOutQuad,<br />
+easeInCubic, easeOutCubic, easeInOutCubic,
+easeInQuart, easeOutQuart, easeInOutQuart,<br />
+easeInQuint, easeOutQuint, easeInOutQuint,
+easeInExpo, easeOutExpo, easeInOutExpo<br />
+<br />
+You can set this property with uppercase or lowercase.<br />
+easeinsine, EASEINSINE, easeInsine are also OK.<br/>
+<br />
+
+<span style="color:#f00"><b>Caution!</b></span> I made this easings with imaginating<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweener.easing</a>. But actually this plugin's easings and Tweener's those are not equal.<br />
+Because I used cubic curve-bezier. (see <a href="http://cssglue.com/cubic" target="_blank">this site</a>)<br />
+So if you change easing curve, try to change the curve value in source code.
+</p>
+<pre>
+$('#options3').ratween({left:'400px'},{easing:'easeInQuint'});
+</pre>
+<div class="playground">
+	<div id="options3" class="square">click</div>
+</div>
+<script>
+$('#options3').click(function(){
+	$('#options3').ratween({left:'400px'},{easing:'easeInQuint'});
+});
+</script>
+
+
+
+
+<!--options4-->
+<p class="mb5"><strong>Callback</strong>)  Defalut is none.</p>
+<pre>
+$('#options4').ratween({left:'400px'},{callback:function(){ alert('Hello ratween'); });
+</pre>
+<div class="playground">
+	<div id="options4" class="square">click</div>
+</div>
+<script>
+$('#options4').click(function(){
+	$('#options4').ratween({left:'400px'},{callback:function(){ alert('Hello ratween'); }});
+});
+</script>
+
+
+<!--options5-->
+<p class="mb5">You can set these options together.</p>
+<pre>
+	$('#options5').ratween({left:'400px',opacity:0},{
+		time:0.5,
+		delay:0.2,
+		easing:'easeInOutcubic',
+		callback:function(){ 
+			alert('Hello ratween'); 
+		}
+	});
+</pre>
+<div class="playground">
+	<div id="options5" class="square">click</div>
+</div>
+<script>
+$('#options5').click(function(){
+	$('#options5').ratween({left:'400px',opacity:0},{
+		time:0.5,
+		delay:0.2,
+		easing:'easeInOutcubic',
+		callback:function(){ 
+			alert('Hello ratween'); 
+		}
+	});
+});
+</script>
+
+
+
+
+<h3>Multiple targets</h3>
+
+<p class="mb15">You can set multiple targets</p>
+<pre>
+$('#multiple_targets div').ratween({left:'400px', opacity:0}, {time:0.5, easing:'easeinoutcubic'});
+</pre>
+<div class="playground" id="multiple_targets">
+	<div style="" class="square">click</div>
+	<div style="left:50px;" class="square">click</div>
+	<div style="left:100px;"class="square">click</div>
+</div>
+<script>
+$('#multiple_targets div').click(function(){
+	$('#multiple_targets div').ratween({left:'400px', opacity:0}, {time:0.5, easing:'easeinoutcubic'});
+});
+</script>
+
+
+<h3>Pause, Stop</h3>
+
+<p class="mb15">You can pause transition.</p>
+<pre>
+$('#pauseBtn').click(function(){
+	$('#pauseTarget').ratween('pause');
+});
+</pre>
+
+<p class="mb5">First click yellow, and then click blue.</p>
+<div class="playground">
+	<div style="" class="square" id="pauseTarget">click</div>
+	<div style="background-color:#0FF" class="square" id="pauseBtn">pause</div>
+</div>
+<script>
+$('#pauseBtn').click(function(){
+	$('#pauseTarget').ratween('pause');
+});
+$('#pauseTarget').click(function(){
+	$('#pauseTarget').ratween({left:'400px', opacity:0}, {time:5.0, easing:'easeinoutcubic'});
+});
+</script>
+
+
+<p class="mb15">You can stop transition. Stop method is equal with forward.</p>
+
+
+<pre>
+$('#stopBtn').click(function(){
+	$('#stopTarget').ratween('stop');
+});
+</pre>
+
+<p class="mb5">First click yellow, and then click blue.</p>
+<div class="playground">
+	<div style="" class="square" id="stopTarget">click</div>
+	<div style="background-color:#0FF" class="square" id="stopBtn">stop</div>
+</div>
+<script>
+$('#stopBtn').click(function(){
+	$('#stopTarget').ratween('stop');
+});
+$('#stopTarget').click(function(){
+	$('#stopTarget').ratween({left:'400px'}, {time:5.0, easing:'easeinoutcubic'});
+});
+</script>
+
+
+
+
+
+</div>
+	
 </body>
 </html>
 	
