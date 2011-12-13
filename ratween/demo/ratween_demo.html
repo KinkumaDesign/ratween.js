@@ -87,6 +87,21 @@ pre{
 #lang_menu{
 	float:right;
 }
+
+#easing_table{
+	margin-bottom:20px;
+}
+#easing_table th, #easing_table td{
+	padding:5px;
+}
+#easing_table th{
+	background:#F3EECC;
+	border-bottom:1px solid #ddd;
+}
+#easing_table td{
+	text-align:center;
+	border-bottom:1px solid #ddd;
+}
 </style>
 </head>
 <body>
@@ -99,7 +114,7 @@ pre{
 <h1>ratween CSS3 Transition jQuery plugin</h1>
 <p class="mb15">This plugin makes elements CSS3 Transition.<br />
 MIT licence.<br />
-current ver 0.2<br />
+current ver 0.2.1<br />
 This plugin's author is <a href="http://en.kuma-de.com/blog/" target="_blank">KinkumaDesign</a><br/>
 <br />
 <a href="https://github.com/KinkumaDesign/ratween.js" target="_blank">>>Download it from github.</a>
@@ -210,22 +225,53 @@ $('#options2').click(function(){
 
 <!--options3-->
 <p class="mb15"><strong>Easing</strong>)  Defalut is lenear.<br />
-There are some easings. Availables are…<br />
+There are some easings. You can use these strings.<br />
 <br />
-lenear,
-easeInSine, easeOutSine, easeInOutSine,
-easeInQuad, easeOutQuad, easeInOutQuad,<br />
-easeInCubic, easeOutCubic, easeInOutCubic,
-easeInQuart, easeOutQuart, easeInOutQuart,<br />
-easeInQuint, easeOutQuint, easeInOutQuint,
-easeInExpo, easeOutExpo, easeInOutExpo<br />
-<br />
-You can set this property with uppercase or lowercase.<br />
+'lenear' and easing names are in below table</p>
+<table border="0" id="easing_table" cellpadding="0" cellspacing="0">
+<tr>
+<th> </th><th>In</th><th>Out</th><th>InOut</th><th>OutIn</th>
+</tr>
+
+<tr>
+<th>Sine</th><td>easeInSine</td><td>easeOutSine</td><td>easeInOutSine</td><td>easeOutInSine</td>
+</tr>
+
+<tr>
+<th>Quad</th><td>easeInQuad</td><td>easeOutQuad</td><td>easeInOutQuad</td><td>easeOutInQuad</td>
+</tr>
+
+<tr>
+<th>Cubic</th><td>easeInCubic</td><td>easeOutCubic</td><td>easeInOutCubic</td><td>easeOutInCubic</td>
+</tr>
+
+<tr>
+<th>Quart</th><td>easeInQuart</td><td>easeOutQuart</td><td>easeInOutQuart</td><td>easeOutInQuart</td>
+</tr>
+
+<tr>
+<th>Quint</th><td>easeInQuint</td><td>easeOutQuint</td><td>easeInOutQuint</td><td>easeOutInQuint</td>
+</tr>
+
+<tr>
+<th>Expo</th><td>easeInExpo</td><td>easeOutExpo</td><td>easeInOutExpo</td><td>easeOutInExpo</td>
+</tr>
+
+<tr>
+<th>Circ</th><td>easeInCirc</td><td>easeOutCirc</td><td>easeInOutCirc</td><td>easeOutInCirc</td>
+</tr>
+
+</table>
+
+<p class="mb15">You can set this property with uppercase or lowercase.<br />
 easeinsine, EASEINSINE, easeInsine are also OK.<br/>
 <br />
 
-<span style="color:#f00"><b>Caution!</b></span> I made this easings with imaginating<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweener.easing</a>. But actually this plugin's easings and Tweener's those are not equal.<br />
-Because I used cubic curve-bezier. (see <a href="http://cssglue.com/cubic" target="_blank">this site</a>)<br />
+<span style="color:#f00"><b>Caution!</b></span><br />
+I made this easings with imaginating<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweener.easing</a>. <br />
+But actually this plugin's easings and Tweener's those are not completely equal. These are nearly equal.<br />
+Because I used cubic curve-bezier to simulate easing expression. (see <a href="http://cssglue.com/cubic" target="_blank">this site</a>)<br />
+Cubic bezier curve can't simulate easing expression completely.<br />
 So if you change easing curve, try to change the curve value in source code.
 </p>
 <pre>

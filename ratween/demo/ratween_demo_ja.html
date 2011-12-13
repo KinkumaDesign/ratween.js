@@ -89,6 +89,21 @@ pre{
 	float:right;
 }
 
+#easing_table{
+	margin-bottom:20px;
+}
+#easing_table th, #easing_table td{
+	padding:5px;
+}
+#easing_table th{
+	background:#F3EECC;
+	border-bottom:1px solid #ddd;
+}
+#easing_table td{
+	text-align:center;
+	border-bottom:1px solid #ddd;
+}
+
 </style>
 </head>
 <body>
@@ -102,7 +117,7 @@ pre{
 <h1>ratween CSS3 Transition jQuery plugin</h1>
 <p class="mb15">要素にCSS3トランジションを適用します。<br />
 MIT ライセンスです。<br />
-current ver 0.2<br />
+current ver 0.2.1<br />
 作者は<a href="http://www.kuma-de.com/" target="_blank">KinkumaDesign</a>です。<br/>
 <br />
 <a href="https://github.com/KinkumaDesign/ratween.js" target="_blank">>>githubからダウンロードする</a>
@@ -213,23 +228,53 @@ $('#options2').click(function(){
 
 <!--options3-->
 <p class="mb15"><strong>イージング</strong>) 初期設定はlenearです。<br />
-下のように、いくつかのイージングがあります。<br />
-<br />
-lenear,
-easeInSine, easeOutSine, easeInOutSine,
-easeInQuad, easeOutQuad, easeInOutQuad,<br />
-easeInCubic, easeOutCubic, easeInOutCubic,
-easeInQuart, easeOutQuart, easeInOutQuart,<br />
-easeInQuint, easeOutQuint, easeInOutQuint,
-easeInExpo, easeOutExpo, easeInOutExpo<br />
-<br />
-大文字、小文字をどちらでも使って書くことが可能です。<br />
+lenearの他に下の表にあるように、いくつかのイージングがあります。</p>
+
+<table border="0" id="easing_table" cellpadding="0" cellspacing="0">
+<tr>
+<th> </th><th>In</th><th>Out</th><th>InOut</th><th>OutIn</th>
+</tr>
+
+<tr>
+<th>Sine</th><td>easeInSine</td><td>easeOutSine</td><td>easeInOutSine</td><td>easeOutInSine</td>
+</tr>
+
+<tr>
+<th>Quad</th><td>easeInQuad</td><td>easeOutQuad</td><td>easeInOutQuad</td><td>easeOutInQuad</td>
+</tr>
+
+<tr>
+<th>Cubic</th><td>easeInCubic</td><td>easeOutCubic</td><td>easeInOutCubic</td><td>easeOutInCubic</td>
+</tr>
+
+<tr>
+<th>Quart</th><td>easeInQuart</td><td>easeOutQuart</td><td>easeInOutQuart</td><td>easeOutInQuart</td>
+</tr>
+
+<tr>
+<th>Quint</th><td>easeInQuint</td><td>easeOutQuint</td><td>easeInOutQuint</td><td>easeOutInQuint</td>
+</tr>
+
+<tr>
+<th>Expo</th><td>easeInExpo</td><td>easeOutExpo</td><td>easeInOutExpo</td><td>easeOutInExpo</td>
+</tr>
+
+<tr>
+<th>Circ</th><td>easeInCirc</td><td>easeOutCirc</td><td>easeInOutCirc</td><td>easeOutInCirc</td>
+</tr>
+
+</table>
+
+<p class="mb15">大文字、小文字をどちらでも使って書くことが可能です。<br />
 easeinsine, EASEINSINE, easeInsine などと買いても大丈夫です。<br/>
 <br />
 
-<span style="color:#f00"><b>注意</b></span> このイージングを作るときに、<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweenerのイージング</a>をイメージしていました。 ですが、実際にはこのプラグインのイージングとTweenerのそれとは全く同じものではありません。<br />
-なぜなら、ベジェカーブを使って書いているためです。(<a href="http://cssglue.com/cubic" target="_blank">このサイト</a>を見てみてください。)これを使って、なんとなくTweenerっぽいカーブの値をとっています。<br />
-だから、もしイージングのカーブを変更したい場合は、ソースコードのカーブの値を書き換えてください。
+<span style="color:#f00"><b>注意</b></span><br />
+このイージングを作るときに、<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweenerのイージング</a>をイメージしていました。<br />
+ですが、実際にはこのプラグインのイージングとTweenerのそれとは全く同じものではありません。<br />
+なぜなら、ベジェカーブを使って書いているためです。(<a href="http://cssglue.com/cubic" target="_blank">このサイト</a>を見てみてください。)<br />
+これと同じ仕組みを使って、Tweenerのイージングに近い値をとっています。<br />
+もしイージングの値を変更したい場合は、ソースコードの値を書き換えてください。
 </p>
 <pre>
 $('#options3').ratween({left:'400px'},{easing:'easeInQuint'});
