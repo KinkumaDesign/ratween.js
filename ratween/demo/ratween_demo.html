@@ -193,7 +193,8 @@ You can set options. Such as time, easing, delay, and callback.
 </p>
 
 <!--options1-->
-<p class="mb5"><strong>Time</strong>)  Defalut is 1.0 second.</p>
+<p class="mb5"><strong>Time</strong><br />
+Defalut is 1.0 second.</p>
 <pre>
 $('#options1').ratween({left:'400px'},{time:0.5});
 </pre>
@@ -209,7 +210,8 @@ $('#options1').click(function(){
 
 
 <!--options2-->
-<p class="mb5"><strong>Delay</strong>)  Defalut is 0.0 second.</p>
+<p class="mb5"><strong>Delay</strong><br />
+Defalut is 0.0 second.</p>
 <pre>
 $('#options2').ratween({left:'400px'},{delay:2.0});
 </pre>
@@ -224,7 +226,8 @@ $('#options2').click(function(){
 
 
 <!--options3-->
-<p class="mb15"><strong>Easing</strong>)  Defalut is lenear.<br />
+<p class="mb15"><strong>Easing</strong><br />
+Defalut is lenear.<br />
 There are some easings. You can use these strings.<br />
 <br />
 'lenear' and easing names are in below table</p>
@@ -264,16 +267,8 @@ There are some easings. You can use these strings.<br />
 </table>
 
 <p class="mb15">You can set this property with uppercase or lowercase.<br />
-easeinsine, EASEINSINE, easeInsine are also OK.<br/>
-<br />
+easeinsine, EASEINSINE, easeInsine are also OK.</p>
 
-<span style="color:#f00"><b>Caution!</b></span><br />
-I made this easings with imaginating<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweener.easing</a>. <br />
-But actually this plugin's easings and Tweener's those are not completely equal. These are nearly equal.<br />
-Because I used cubic curve-bezier to simulate easing expression. (see <a href="http://cssglue.com/cubic" target="_blank">this site</a>)<br />
-Cubic bezier curve can't simulate easing expression completely.<br />
-So if you change easing curve, try to change the curve value in source code.
-</p>
 <pre>
 $('#options3').ratween({left:'400px'},{easing:'easeInQuint'});
 </pre>
@@ -287,10 +282,23 @@ $('#options3').click(function(){
 </script>
 
 
+<p class="mb15">
+
+<span style="color:#f00"><b>Caution!</b></span><br />
+I made this easings with imaginating<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweener.easing</a>. <br />
+But actually this plugin's easings and Tweener's those are not completely equal. These are nearly equal.<br />
+Because I used cubic curve-bezier to simulate easing expression. (see <a href="http://cssglue.com/cubic" target="_blank">this site</a>)<br />
+Cubic bezier curve can't simulate easing expression completely.<br />
+So if you change easing curve, try to change the curve value in source code.
+</p>
+
+
+
 
 
 <!--options4-->
-<p class="mb5"><strong>Callback</strong>)  Defalut is none.</p>
+<p class="mb5"><strong>Callback</strong><br/>
+It is triggered when transition is complete. Defalut is nothing.</p>
 <pre>
 $('#options4').ratween({left:'400px'},{callback:function(){ alert('Hello ratween'); });
 </pre>

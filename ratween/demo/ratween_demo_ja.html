@@ -196,7 +196,8 @@ $('#basic3').click(function(){
 </p>
 
 <!--options1-->
-<p class="mb5"><strong>時間</strong>) 初期設定は 1.0秒です。</p>
+<p class="mb5"><strong>時間</strong><br />
+初期設定は 1.0秒です。</p>
 <pre>
 $('#options1').ratween({left:'400px'},{time:0.5});
 </pre>
@@ -212,7 +213,8 @@ $('#options1').click(function(){
 
 
 <!--options2-->
-<p class="mb5"><strong>遅延時間</strong>)  初期設定は 0.0秒です。</p>
+<p class="mb5"><strong>遅延時間</strong><br />
+初期設定は 0.0秒です。</p>
 <pre>
 $('#options2').ratween({left:'400px'},{delay:2.0});
 </pre>
@@ -227,7 +229,8 @@ $('#options2').click(function(){
 
 
 <!--options3-->
-<p class="mb15"><strong>イージング</strong>) 初期設定はlenearです。<br />
+<p class="mb15"><strong>イージング</strong><br />
+初期設定はlenearです。<br />
 lenearの他に下の表にあるように、いくつかのイージングがあります。</p>
 
 <table border="0" id="easing_table" cellpadding="0" cellspacing="0">
@@ -266,16 +269,8 @@ lenearの他に下の表にあるように、いくつかのイージングが�
 </table>
 
 <p class="mb15">大文字、小文字をどちらでも使って書くことが可能です。<br />
-easeinsine, EASEINSINE, easeInsine などと買いても大丈夫です。<br/>
-<br />
+easeinsine, EASEINSINE, easeInsine などと買いても大丈夫です。</p>
 
-<span style="color:#f00"><b>注意</b></span><br />
-このイージングを作るときに、<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweenerのイージング</a>をイメージしていました。<br />
-ですが、実際にはこのプラグインのイージングとTweenerのそれとは全く同じものではありません。<br />
-なぜなら、ベジェカーブを使って書いているためです。(<a href="http://cssglue.com/cubic" target="_blank">このサイト</a>を見てみてください。)<br />
-これと同じ仕組みを使って、Tweenerのイージングに近い値をとっています。<br />
-もしイージングの値を変更したい場合は、ソースコードの値を書き換えてください。
-</p>
 <pre>
 $('#options3').ratween({left:'400px'},{easing:'easeInQuint'});
 </pre>
@@ -288,11 +283,23 @@ $('#options3').click(function(){
 });
 </script>
 
+<p class="mb15">
+
+<span style="color:#f00"><b>注意</b></span><br />
+このイージングを作るときに、<a href="http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html" target="_blank">Tweenerのイージング</a>をイメージしていました。<br />
+ですが、実際にはこのプラグインのイージングとTweenerのそれとは全く同じものではありません。<br />
+なぜなら、ベジェカーブを使って書いているためです。(<a href="http://cssglue.com/cubic" target="_blank">このサイト</a>を見てみてください。)<br />
+これと同じ仕組みを使って、Tweenerのイージングに近い値をとっています。<br />
+もしイージングの値を変更したい場合は、ソースコードの値を書き換えてください。
+</p>
+
+
 
 
 
 <!--options4-->
-<p class="mb5"><strong>終了時関数呼び出し</strong>)  初期設定なし。</p>
+<p class="mb5"><strong>終了時関数呼び出し</strong><br />
+初期設定なし。</p>
 <pre>
 $('#options4').ratween({left:'400px'},{callback:function(){ alert('Hello ratween'); });
 </pre>
