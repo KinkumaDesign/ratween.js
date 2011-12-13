@@ -25,24 +25,41 @@
 	
 	var easingsBezier = {
 		lenear:			'0.00,0.00,1.00,1.00',
-		easeinsine:		'0.42,0.00,1.00,1.00',
-		easeoutsine:	'0.00,0.00,0.58,1.00',
-		easeinoutsine:	'0.42,0.00,0.58,1.00',
-		easeinquad:		'0.62,0.12,1.00,1.00',
-		easeoutquad:	'0.00,0.00,0.48,0.88',
-		easeinoutquad:	'0.62,0.12,0.48,0.88',
-		easeincubic:	'0.80,0.00,1.00,1.00',
-		easeoutcubic:	'0.00,0.00,0.20,1.00',
-		easeinoutcubic:	'0.80,0.00,0.20,1.00',
-		easeinquart:	'1.00,0.00,1.00,0.84',
-		easeoutquart:	'0.00,0.17,0.00,1.00',
-		easeinoutquart:	'0.50,0.00,0.50,0.00',
-		easeinquint:	'1.00,0.00,1.00,0.46',
-		easeoutquint:	'0.00,0.54,0.00,0.00',
-		easeinoutquint: '0.83,0.00,0.17,0.00',
-		easeinexpo:		'1.00,0.00,1.00,0.00',
-		easeoutexpo:	'0.00,1.00,0.00,1.00',
-		easeinoutexpo:	'1.00,0.00,1.00,0.00'
+		
+		easeinsine:		'0.44,0,0.99,0.98', 
+		easeoutsine:	'0,0.44,0.98,0.99', 
+		easeinoutsine:	'0.36,0,0.64,1',
+		easeoutinsine:	'0,0.36,1,0.64',
+		
+		easeinquad:		'0.51,0,0.96,0.9',
+		easeoutquad:	'0,0.51,0.9,0.96',
+		easeinoutquad:	'0.43,0,0.57,1',
+		easeoutinquad:	'0,0.43,1,0.57',
+		
+		easeincubic:	'0.55,0,0.7,0.19',
+		easeoutcubic:	'0,0.55,0.19,0.7',
+		easeinoutcubic:	'0.7,0,0.3,1',
+		easeoutincubic:	'0,0.7,1,0.3',
+		
+		easeinquart:	'0.74,0,0.74,0.19',
+		easeoutquart:	'0,0.74,0.19,0.74',
+		easeinoutquart:	'0.85,0,0.13,0.99',
+		easeoutinquart:	'0,0.85,0.99,0.13',
+		
+		easeinquint:	'0.79,0,0.75,0.1',
+		easeoutquint:	'0,0.79,0.1,0.75',
+		easeinoutquint: '0.9,0,0.09,1',
+		easeoutinquint:	'0,0.9,1,0.09',
+		
+		easeinexpo:		'0.81,0,0.83,0.11',
+		easeoutexpo:	'0,0.81,0.11,0.83',
+		easeinoutexpo:	'0.97,0,0.02,0.99',
+		easeoutinexpo:	'0,0.97,0.99,0.02',
+		
+		easeincirc:		'0.67,0,0.99,0.57',
+		easeoutcirc:	'0,0.67,0.57,0.99',
+		easeinoutcirc:	'0.92,0.15,0.08,0.82',
+		easeoutincirc:	'0.15,0.92,0.82,0.08'
 	};
 	
 	var removeTransition = function(target){
